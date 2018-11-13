@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="{% static "CSS/mystyle.css" %}">
+    <link rel="stylesheet" href="{% static "CSS/form_special.css" %}">
+  </head>
+  <body>
+    <h1>Welcome to the Simple Survey!</h1>
+    <div class="container">
+      <form method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" id="btn" value="Submit">
+      </form>
+    </div>
+
+  </body>
+</html>

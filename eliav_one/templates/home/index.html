@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+{% load my_extras %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Eliav One</title>
+    <link rel="stylesheet" href="{% static "CSS/mystyle.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Hi! I'm Heading One</h1>
+    {{ insert }}<br>
+    <img src="{% static "images/lights.jpg" %}" alt="Uh Oh!"><br>
+    <a href="form/">SUBSCRIBE!</a><br>
+    <a href="user_data/">User Data</a><br>
+    <a href="ord_form/">Form</a><br>
+    <a href="sign_up/hello">Sign Up!</a>
+    <p>All forms have been saved to the Model</p>
+    <h1 class="in">{{ text|cuty:'hello'|title }}</h1>
+    <h1 class="in">{{ number|add:9 }}</h1>
+    <style>
+      .in{
+        font-family: sans-serif;
+        color: blue
+      }
+    </style>
+  </body>
+
+</html>

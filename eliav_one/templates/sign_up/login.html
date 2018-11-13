@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends "sign_up/base.html" %}
+{% load staticfiles %}
+  {% block body_block %}
+    <div class="jumbotron">
+      <h1 class="display-4">Please Login!</h1>
+        <form action="{% url 'login' %}" method="POST">
+          {% csrf_token %}
+          <label for="username">Username:</label>
+          <input type="text" name="username" placeholder="Enter Username:">
+
+          <label for="password">Password:</label>
+          <input type="password" name="password">
+
+          <input type="submit" name="" value="Login!">
+        </form>
+    </div>
+  {% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends "base/base.html" %}
+{% block inherite %}
+    <h1>Hello Visitors!</h1>
+    <h2>Below are the information about all the users!</h2>
+    <div class="container">
+      {% if users_table %}
+        <table align="center">
+          <thead>
+            <div class="container">
+              <th class="table">NAME</th>
+              <th class="table">EMAIL</th>
+              <th class="table">PASSWORD</th>
+              <th class="table">GENDER</th>
+            </div>
+          </thead>
+          {% for user in users_table %}
+            <div class="container">
+              <tr>
+                <td class="table">{{ user.name }}</td>
+                <td class="table">{{ user.email }}</td>
+                <td class="table">{{ user.password }}</td>
+                <td class="table">{{ user.gender }}</td>
+              </tr>
+            </div>
+          {% endfor %}
+        </table>
+      {% endif %}
+    </div>
+    <style>
+      .table{
+        border: 1px solid black;
+      }
+      th{
+        padding: 10px;
+        background-color: #DB5A42;
+      }
+      td{
+        padding: 5px;
+        background-color: #FFD275;
+      }
+      .container{
+        font-family: 'Raleway', sans-serif;
+      }
+    </style>
+{% endblock %}

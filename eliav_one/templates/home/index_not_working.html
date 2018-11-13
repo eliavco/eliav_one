@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends "base/base.html" %}
+{% block inherite %}
+    <h1>Hi! I'm Heading One</h1>
+    {{ insert }}<br>
+    <img src="{% static "images/lights.jpg" %}" alt="Uh Oh!"><br>
+    <a href="form/">Sign Up!</a><br>
+    <a href="user_data/">User Data</a><br>
+    <a href="ord_form/">Form</a><br>
+    <p>All forms have been saved to the Model</p>
+{% endblock %}

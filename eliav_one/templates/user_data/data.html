@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User's Data</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "CSS/mystyle.css" %}">
+
+  </head>
+  <body>
+    <h1>Hello Visitors!</h1>
+    <h2>Below are the information about all the users!</h2>
+    <div class="container">
+      {% if users_table %}
+        <table align="center">
+          <thead>
+            <div class="container">
+              <th class="table">NAME</th>
+              <th class="table">EMAIL</th>
+              <th class="table">PASSWORD</th>
+              <th class="table">GENDER</th>
+            </div>
+          </thead>
+          {% for user in users_table %}
+            <div class="container">
+              <tr>
+                <td class="table">{{ user.name }}</td>
+                <td class="table">{{ user.email }}</td>
+                <td class="table">{{ user.password }}</td>
+                <td class="table">{{ user.gender }}</td>
+              </tr>
+            </div>
+          {% endfor %}
+        </table>
+      {% endif %}
+    </div>
+    <style>
+      .table{
+        border: 1px solid black;
+      }
+      th{
+        padding: 10px;
+        background-color: #DB5A42;
+      }
+      td{
+        padding: 5px;
+        background-color: #FFD275;
+      }
+      .container{
+        font-family: 'Raleway', sans-serif;
+      }
+    </style>
+  </body>
+</html>
